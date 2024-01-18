@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NodeMediaClient.h</key>
 		<data>
-		fK0Z/LfiP1eji0xmRS7+cuK6HIk=
+		i9xYiC+xHJFyCwvbbS1UpyMRvSw=
 		</data>
 		<key>Headers/NodePlayer.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TKD3fi8VxrjW/j7BqGYZDIh/UUs=
+		j2sjK+xNIrMWPmlCyV91GETi0d4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -31,11 +31,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fK0Z/LfiP1eji0xmRS7+cuK6HIk=
+			i9xYiC+xHJFyCwvbbS1UpyMRvSw=
 			</data>
 			<key>hash2</key>
 			<data>
-			fLSD+3XPlO9POxDcX+Kk1QdCwVEdEb1DEAvcgYuMTdE=
+			QT1lTBQcSAB0nr29yfc264JtTErw0PbVQBI11zcLQCQ=
 			</data>
 		</dict>
 		<key>Headers/NodePlayer.h</key>

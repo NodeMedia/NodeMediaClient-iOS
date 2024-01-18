@@ -25,10 +25,10 @@ A simple, high-performance, low-latency live streaming SDK.
 * Compatible with flv_extension_id and Enhanced-Rtmp standards
   
 ## Install
-You want to add pod 'NodeMediaClient', '~> 3.2' similar to the following to your Podfile:
+You want to add pod 'NodeMediaClient', '~> 3.2.3' similar to the following to your Podfile:
 ```
 target 'MyApp' do
-  pod 'NodeMediaClient', '~> 3.2'
+  pod 'NodeMediaClient', '~> 3.2.3'
 end
 ```
 Then run a **pod install** inside your terminal, or from CocoaPods.app.
