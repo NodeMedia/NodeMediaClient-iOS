@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.frameworks         = 'CoreMedia','AudioToolbox','VideoToolbox','AVFoundation'
 
   # Supported deployment targets
-  spec.ios.deployment_target  = "9.0"
+  spec.ios.deployment_target  = "12.0"
 
   # Published binaries
   spec.vendored_frameworks = "NodeMediaClient.xcframework"
