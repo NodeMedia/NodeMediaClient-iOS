@@ -7,6 +7,7 @@ Pod::Spec.new do |spec|
   spec.documentation_url  = "https://www.nodemedia.cn/doc/web/#/7?page_id=73"
   spec.license            = { :type => 'Copyright', :text => 'Copyright 2024 NodeMedia Ltd. All rights reserved.' }
   spec.author             = { "Chen Mingliang" => "illuspas@msn.com" }
+  spec.readme             = 'https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/master/README.md'
   spec.source             = { :git => 'https://github.com/NodeMedia/NodeMediaClient-iOS.git', :tag => "#{spec.version}" }
   spec.libraries          = 'z'
   spec.frameworks         = 'CoreMedia','AudioToolbox','VideoToolbox','AVFoundation'
