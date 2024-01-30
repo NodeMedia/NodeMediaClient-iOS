@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NodeMediaClient.h</key>
 		<data>
-		VyfoolUiXqVyMYeBjAgBkBbuuBE=
+		tOYAEDTcsvsOqW4BOlP3bM3g1JU=
 		</data>
 		<key>Headers/NodePlayer.h</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>Headers/NodePublisher.h</key>
 		<data>
-		3TC/XnJ93wGrB1uQQIiEYSo49WA=
+		JmsSoyXFHr8q88KxRoq435imY2w=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Yf56B4VS9dAsZTW+84uJ13em4eI=
+		E08E9Hb7E8+9oGUiz45tVwj6DfE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -31,11 +31,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VyfoolUiXqVyMYeBjAgBkBbuuBE=
+			tOYAEDTcsvsOqW4BOlP3bM3g1JU=
 			</data>
 			<key>hash2</key>
 			<data>
-			OJWl15VjZPo1JLvPqMkQY/NJ8b8U8T0/FG1j79jDcqk=
+			n6KV0B/L5OB/PdeCX1TzvWirVFyLALzmQtGz2yuGwdE=
 			</data>
 		</dict>
 		<key>Headers/NodePlayer.h</key>
@@ -53,11 +53,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3TC/XnJ93wGrB1uQQIiEYSo49WA=
+			JmsSoyXFHr8q88KxRoq435imY2w=
 			</data>
 			<key>hash2</key>
 			<data>
-			cqmyA9pUKWzRdRZuk8fgpYUM0x/WOfGYZ3INUjMi1Ec=
+			KMTkAWyfz2pAe0iDvw+pVM8AJ9Z+BnbuxJ0GlX0uiiA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

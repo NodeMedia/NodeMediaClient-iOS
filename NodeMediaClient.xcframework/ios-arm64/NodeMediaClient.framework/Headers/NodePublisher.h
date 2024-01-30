@@ -29,6 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 #define VIDEO_ORIENTATION_LANDSCAPE_RIGHT 3
 #define VIDEO_ORIENTATION_LANDSCAPE_LEFT  4
 
+#define FLAG_AF  1
+#define FLAG_AE  2
+#define FLAG_AWB  4
+
 #define NMC_EXPORT                        __attribute__((visibility("default")))
 
 @class UIView;
@@ -112,6 +116,18 @@ NMC_EXPORT
 
 ///从视图移除
 - (void)detachView;
+
+/// 开启闪光灯补光
+- (void)enableTorch:(Boolean)enable;
+
+/// 设置缩放, 0.0-1.0
+- (void)setRoomRatio:(float)ratio;
+
+/// 设置中心点自动对焦曝光白平衡
+- (void)startFocusAndMeteringCenter;
+
+/// 设置自动对焦曝光白平衡
+- (void)startFocusAndMetering:(nullable CGPoint*)point withFlags:(int)flags;
 
 @end
 
