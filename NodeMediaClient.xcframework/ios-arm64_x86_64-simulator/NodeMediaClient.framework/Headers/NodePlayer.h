@@ -41,6 +41,9 @@ NMC_EXPORT
 ///开启硬件极速
 @property (nonatomic) Boolean HWAccelEnable;
 
+///播放音量  0.0 ~ 1.0
+@property (nonatomic) float volume;
+
 ///日志等级 0-error，1-info，2-debug
 @property (nonatomic, copy) NSString *cryptoKey;
 
@@ -76,9 +79,6 @@ NMC_EXPORT
 
 /// 当前视频缓冲点，单位毫秒
 @property (nonatomic, readonly) NSUInteger bufferPosition;
-
-///播放音量  0.0 ~ 1.0
-@property (nonatomic) float volume;
 
 ///以注册码初始化播放器
 - (id)initWithLicense:(NSString *)license;

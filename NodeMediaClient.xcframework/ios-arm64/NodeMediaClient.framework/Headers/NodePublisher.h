@@ -33,6 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 #define FLAG_AE  2
 #define FLAG_AWB  4
 
+#define NMC_DEVICE_TYPE_WideAngleCamera 0 // 广角
+#define NMC_DEVICE_TYPE_TelephotoCamera 1 // 长焦
+#define NMC_DEVICE_TYPE_UltraWideCamera 2 // 超广角
+#define NMC_DEVICE_TYPE_DualCamera 3 // 双摄
+#define NMC_DEVICE_TYPE_TripleCamera 4 // 三摄
+
 #define NMC_EXPORT                        __attribute__((visibility("default")))
 
 @class UIView;
@@ -86,6 +92,9 @@ NMC_EXPORT
 
 ///打开摄像头，是否是前置打开
 - (int)openCamera:(Boolean)frontCamera;
+
+///打开指定类型摄像头，是否是前置打开
+- (int)openCameraDevice:(int)deviceType withFront:(Boolean)frontCamera;
 
 ///关闭摄像头
 - (int)closeCamera;
