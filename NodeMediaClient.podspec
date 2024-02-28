@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name               = "NodeMediaClient"
-  spec.version            = "3.2.6"
+  spec.version            = "3.2.7"
   spec.summary            = "A live streaming SDK."
   spec.description        = "NodeMedia RTMP/RTSP/HTTP Play/Publish Client SDK for iOS"
   spec.homepage           = "https://www.nodemedia.cn"

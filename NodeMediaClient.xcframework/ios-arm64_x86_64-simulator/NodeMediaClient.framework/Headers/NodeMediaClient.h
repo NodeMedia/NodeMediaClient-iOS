@@ -1,6 +1,6 @@
 //
 //  NodeMediaClient.h
-//  v3.2.6
+//  v3.2.7
 //
 //  Created by ALiang on 2021/11/29.
 //
