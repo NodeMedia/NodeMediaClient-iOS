@@ -10,15 +10,15 @@
 		</data>
 		<key>Headers/NodePlayer.h</key>
 		<data>
-		BY0QDzGaYjIy0XRfh1IG0iuzCLM=
+		CCpWE0izGHjwLIDEU+J+bbYudzk=
 		</data>
 		<key>Headers/NodePublisher.h</key>
 		<data>
-		dLFcMaAbriQzdw/DG45j+toQoo4=
+		PoZi7yqHTSB8sy0YOPxIfgGRISY=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		befShL5Z0Kvhl596kx7wYWS1TQI=
+		mbpNwyfrAsosq40KyEj8doedq74=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -38,14 +38,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UY9pjIli04bt8C8mna85wR/zdQklxQemRGPmyfu0Xxk=
+			wZvPPOSyl9PEGPMEWdd5cz5OnWnh8gMzmSjim7z68nc=
 			</data>
 		</dict>
 		<key>Headers/NodePublisher.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ht7cJFgewjupY5gHDJfaCp2Ri64xCrZ68UapYQkIk64=
+			l5E+Rje49jAKU8DL5sBiTMOuHGSUQ5hHshQxQfs5ee4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

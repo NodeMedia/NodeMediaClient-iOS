@@ -44,7 +44,7 @@ NMC_EXPORT
 ///播放音量  0.0 ~ 1.0
 @property (nonatomic) float volume;
 
-///日志等级 0-error，1-info，2-debug
+///解密密钥，16位字符串
 @property (nonatomic, copy) NSString *cryptoKey;
 
 /// RTSP 传输协议
@@ -105,7 +105,7 @@ NMC_EXPORT
 - (int)screenshot:(NSString *)filename;
 
 ///开始录制
-- (int)startRecord:(NSString *)filepath;
+- (int)startRecord:(NSString *)filename;
 
 ///停止录制
 - (int)stopRecord;

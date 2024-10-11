@@ -87,7 +87,7 @@ NMC_EXPORT
 
 @property (nonatomic) Boolean enhancedRtmp;
 
-///以注册码初始化播放器
+///以注册码初始化推流器
 - (id)initWithLicense:(NSString *)license;
 
 ///打开摄像头，是否是前置打开
