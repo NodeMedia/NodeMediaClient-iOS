@@ -25,10 +25,10 @@ A simple, high-performance, low-latency live streaming SDK.
 * Compatible with flv_extension_id and Enhanced-Rtmp standards
   
 ## Install
-You want to add pod 'NodeMediaClient', '~> 3.2' similar to the following to your Podfile:
+You want to add pod 'NodeMediaClient', '~> 4.0' similar to the following to your Podfile:
 ```
 target 'MyApp' do
-  pod 'NodeMediaClient', '~> 3.2'
+  pod 'NodeMediaClient', '~> 4.0'
 end
 ```
 Then run a **pod install** inside your terminal, or from CocoaPods.app.
@@ -92,10 +92,10 @@ Please confirm that the description of the 'Privacy - Microphone Usage Descripti
 - (void)viewDidLoad {
     [super viewDidLoad];
     _np = [[NodePublisher alloc] init];
-    [_np attachView:self.view];
     [_np setAudioParamWithCodec:NMC_CODEC_ID_AAC profile:NMC_PROFILE_AUTO samplerate:48000 channels:2 bitrate:64*1000];
     [_np setVideoOrientation:VIDEO_ORIENTATION_PORTRAIT];
     [_np setVideoParamWithCodec:NMC_CODEC_ID_H264 profile:NMC_PROFILE_AUTO width:480 height:854 fps:30 bitrate:1000*1000];
+    [_np attachView:self.view];
     [_np openCamera:true];
     [_np start:@"rtmp://192.168.0.2/live/demo"];
     // Do any additional setup after loading the view.

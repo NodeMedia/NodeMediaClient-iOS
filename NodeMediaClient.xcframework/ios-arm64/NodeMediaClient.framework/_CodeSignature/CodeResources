@@ -6,23 +6,27 @@
 	<dict>
 		<key>Headers/NodeMediaClient.h</key>
 		<data>
-		M7xLlekc1i4rbT1mW4cjHJM4whQ=
+		czVrghq6r+s5s/MwiFdABK132eE=
 		</data>
 		<key>Headers/NodePlayer.h</key>
 		<data>
-		CCpWE0izGHjwLIDEU+J+bbYudzk=
+		e64xfiINhOFLVNmzLQI3S5TESxs=
 		</data>
 		<key>Headers/NodePublisher.h</key>
 		<data>
-		PoZi7yqHTSB8sy0YOPxIfgGRISY=
+		JcEOd6Hi9TSPUGjPn7WS8WHJQoI=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		U5bTGN9LAbdZ3j/KA9wjV8nvJtQ=
+		rCzKMxGN1qVXx0/C7d7UQ+Zo/dc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		Bmd0AefBOZy6fy7kJpkc+ai7CDs=
+		</data>
+		<key>filters.arch</key>
+		<data>
+		mP9+NHWAu61Uh+K/FUApBQuu3MU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -31,21 +35,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Dus3U8+PbbSqXuAEuiSTlfG79P4wXIkWRys7g4DVaqg=
+			qtGd/qH0OchH5LGs0L7NHxdxSMXnnnAJYCn/k6bPP6Q=
 			</data>
 		</dict>
 		<key>Headers/NodePlayer.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wZvPPOSyl9PEGPMEWdd5cz5OnWnh8gMzmSjim7z68nc=
+			jC8oK+41CaUGneb3uAL+P93Mcw2cQ5prMpc5Xlib3q0=
 			</data>
 		</dict>
 		<key>Headers/NodePublisher.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l5E+Rje49jAKU8DL5sBiTMOuHGSUQ5hHshQxQfs5ee4=
+			fDdQbnZBKebphwqu+pQqIVxErzGWnuoTDzQiyG+3D7A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -53,6 +57,13 @@
 			<key>hash2</key>
 			<data>
 			+MwNlmkBW6b2wX64+EZUxLQg6pBVbttyMdvw+/wkA+4=
+			</data>
+		</dict>
+		<key>filters.arch</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Si300T8m+jYFytwR5JYODs4aE9IBzxXhxXuGof3qtIM=
 			</data>
 		</dict>
 	</dict>

@@ -2,17 +2,13 @@
 //  NodePlayer.h
 //  NodeMediaClient
 //
-//  Created by ALiang on 2021/11/29.
+//  Created by Mingliang Chen on 2025/11/16.
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define NMC_EXPORT __attribute__((visibility("default")))
-
-#define RTSP_TRANSPORT_UDP @"udp"
-#define RTSP_TRANSPORT_TCP @"tcp"
-#define RTSP_TRANSPORT_UDP_MULTICAST @"udp_multicast"
-#define RTSP_TRANSPORT_HTTP @"http"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@class UIView;
 NMC_EXPORT
 @interface NodePlayer : NSObject
 
@@ -30,13 +25,13 @@ NMC_EXPORT
 @property (nullable, nonatomic, weak) id<NodePlayerDelegate> nodePlayerDelegate;
 
 ///直播视频缓冲时长，单位毫秒，默认1000，当设为0时不进行缓冲与音视频同步
-@property (nonatomic) NSUInteger bufferTime;
+@property (nonatomic) NSInteger bufferTime;
 
 ///视频缩放模式，0-填充，1-等比缩放，2-等比填充三种
-@property (nonatomic) NSUInteger scaleMode;
+@property (nonatomic) NSInteger scaleMode;
 
 ///日志等级 0-error，1-info，2-debug
-@property (nonatomic) NSUInteger logLevel;
+@property (nonatomic) NSInteger logLevel;
 
 ///开启硬件极速
 @property (nonatomic) Boolean HWAccelEnable;
@@ -49,12 +44,6 @@ NMC_EXPORT
 
 /// RTSP 传输协议
 @property (nonatomic, copy) NSString *RTSPTransport;
-
-/// RTMP Swf Url
-@property (nonatomic, copy) NSString *RTMPSwfUrl;
-
-/// RTMP Page Url
-@property (nonatomic, copy) NSString *RTMPPageUrl;
 
 /// HTTP Referer
 @property (nonatomic, copy) NSString *HTTPReferer;
@@ -72,43 +61,78 @@ NMC_EXPORT
 @property (nonatomic, readonly) Boolean isPlaying;
 
 /// 点播视频总时长，单位毫秒
-@property (nonatomic, readonly) NSUInteger duration;
+@property (nonatomic, readonly) NSInteger duration;
 
 /// 当前视频播放点，单位毫秒
-@property (nonatomic, readonly) NSUInteger currentPosition;
+@property (nonatomic, readonly) NSInteger currentPosition;
 
 /// 当前视频缓冲点，单位毫秒
-@property (nonatomic, readonly) NSUInteger bufferPosition;
+@property (nonatomic, readonly) NSInteger bufferPosition;
 
-///以注册码初始化播放器
-- (id)initWithLicense:(NSString *)license;
+/**
+ * 使用许可证初始化 NodePlayer
+ * @param license NodePlayer 的许可证字符串
+ * @return 已初始化的 NodePlayer 实例
+ */
+- (instancetype)initWithLicense:(NSString *)license;
 
-///附加到视图
+/**
+ * 附加 UIView 用于渲染媒体内容
+ * UIView 应具有 CAEAGLLayer 层用于 OpenGL ES 渲染
+ * @param view 用于渲染的 UIView
+ */
 - (void)attachView:(UIView *)view;
 
-///从视图移除
+/**
+ * 分离当前附加的 UIView
+ */
 - (void)detachView;
 
-///开始播放视频流
-- (int)start:(NSString *)url;
+/**
+ * 开始播放
+ * @param url 要播放的媒体 URL
+ * @return int 状态码
+ */
+- (NSInteger)start:(NSString *)url;
 
-///停止播放视频流
-- (int)stop;
+/**
+ * 停止播放
+ * @return int 状态码
+ */
+- (NSInteger)stop;
 
-///暂停播放点播视频流
-- (int)pause:(Boolean)isPause;
+/**
+ * 暂停播放
+ * @return int 状态码
+ */
+- (NSInteger)pause:(Boolean)isPause;
 
-///点播视频时移到时间点
-- (int)seek:(NSUInteger)pts;
+/**
+ * 跳转到指定位置
+ * @param pts 要跳转到的显示时间戳
+ * @return int 状态码
+ */
+- (NSInteger)seek:(NSUInteger)pts;
 
-///视频截图
-- (int)screenshot:(NSString *)filename;
+/**
+ * 截图并保存到指定文件名
+ * @param filename 保存截图的文件名
+ * @return int 状态码
+ */
+- (NSInteger)screenshot:(NSString *)filename;
 
-///开始录制
-- (int)startRecord:(NSString *)filename;
+/**
+ * 开始录制到指定文件名
+ * @param filename 保存录制的文件名
+ * @return int 状态码
+ */
+- (NSInteger)startRecord:(NSString *)filename;
 
-///停止录制
-- (int)stopRecord;
+/**
+ * 停止录制
+ * @return int 状态码
+ */
+- (NSInteger)stopRecord;
 
 @end
 

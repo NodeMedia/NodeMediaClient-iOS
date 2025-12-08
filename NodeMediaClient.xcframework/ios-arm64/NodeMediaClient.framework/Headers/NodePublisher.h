@@ -2,46 +2,59 @@
 //  NodePublisher.h
 //  NodeMediaClient
 //
-//  Created by ALiang on 2023/4/23.
+//  Created by Mingliang Chen on 2025/11/16.
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define NMC_CODEC_ID_H264                 27
-#define NMC_CODEC_ID_H265                 173
-#define NMC_CODEC_ID_AAC                  86018
+#define NMC_CODEC_ID_H264                   27
+#define NMC_CODEC_ID_H265                   173
+#define NMC_CODEC_ID_AAC                    86018
+#define NMC_CODEC_ID_OPUS                   86076
+#define NMC_CODEC_ID_PCMA                   65543
+#define NMC_CODEC_ID_PCMU                   65542
 
-#define NMC_PROFILE_AUTO                  0
-#define NMC_PROFILE_H264_BASELINE         66
-#define NMC_PROFILE_H264_MAIN             77
-#define NMC_PROFILE_H264_HIGH             100
-#define NMC_PROFILE_H265_MAIN             1
-#define NMC_PROFILE_AAC_LC                1
-#define NMC_PROFILE_AAC_HE                4
-#define NMC_PROFILE_AAC_HE_V2             28
-#define NMC_PROFILE_AAC_LD                22
-#define NMC_PROFILE_AAC_ELD               38
+#define NMC_PROFILE_AUTO                    0
+#define NMC_PROFILE_H264_BASELINE           66
+#define NMC_PROFILE_H264_MAIN               77
+#define NMC_PROFILE_H264_HIGH               100
+#define NMC_PROFILE_H265_MAIN               1
+#define NMC_PROFILE_AAC_LC                  1
+#define NMC_PROFILE_AAC_HE                  4
+#define NMC_PROFILE_AAC_HE_V2               28
 
-#define VIDEO_ORIENTATION_PORTRAIT        1
-#define VIDEO_ORIENTATION_LANDSCAPE_RIGHT 3
-#define VIDEO_ORIENTATION_LANDSCAPE_LEFT  4
+#define VIDEO_ORIENTATION_PORTRAIT          1
+#define VIDEO_ORIENTATION_LANDSCAPE_RIGHT   3
+#define VIDEO_ORIENTATION_LANDSCAPE_LEFT    4
 
-#define FLAG_AF  1
-#define FLAG_AE  2
-#define FLAG_AWB  4
+#define FLAG_AF                             1
+#define FLAG_AE                             2
+#define FLAG_AWB                            4
 
-#define NMC_DEVICE_TYPE_WideAngleCamera 0 // 广角
-#define NMC_DEVICE_TYPE_TelephotoCamera 1 // 长焦
-#define NMC_DEVICE_TYPE_UltraWideCamera 2 // 超广角
-#define NMC_DEVICE_TYPE_DualCamera 3 // 双摄
-#define NMC_DEVICE_TYPE_TripleCamera 4 // 三摄
+#define NMC_DEVICE_TYPE_WideAngleCamera     0 // 广角
+#define NMC_DEVICE_TYPE_TelephotoCamera     1 // 长焦
+#define NMC_DEVICE_TYPE_UltraWideCamera     2 // 超广角
+#define NMC_DEVICE_TYPE_DualCamera          3 // 双摄
+#define NMC_DEVICE_TYPE_TripleCamera        4 // 三摄
 
-#define NMC_EXPORT                        __attribute__((visibility("default")))
+#define EFFECTOR_BRIGHTNESS                 @"brightness"   // 该参数 0.0f -- 2.0f, 默认是 1.0f
+#define EFFECTOR_CONTRAST                   @"contrast"     // 该参数 0.0f -- 2.0f, 默认是 1.0f
+#define EFFECTOR_SATURATION                 @"saturation"   // 该参数 0.0f -- 2.0f, 默认是 1.0f
+#define EFFECTOR_SHARPEN                    @"sharpen"      // 该参数 0.0f -- 1.0f
+#define EFFECTOR_SMOOTHSKIN                 @"smoothskin"   // 该参数 0.0f -- 1.0f
+#define EFFECTOR_STYLE                      @"style"        // 该参数 0.0f -- 1.0f
 
-@class UIView;
+#define EFFECTOR_STYLE_ID_ORIGINAL          0
+#define EFFECTOR_STYLE_ID_ENHANCED          1
+#define EFFECTOR_STYLE_ID_FAIRSKIN          2
+#define EFFECTOR_STYLE_ID_COOL              3
+#define EFFECTOR_STYLE_ID_FILM              4
+#define EFFECTOR_STYLE_ID_BOOST             5
+
+#define NMC_EXPORT __attribute__((visibility("default")))
 
 @protocol NodePublisherDelegate
 
@@ -55,8 +68,8 @@ NMC_EXPORT
 ///事件委托
 @property (nonatomic, weak) id <NodePublisherDelegate> nodePublisherDelegate;
 
-///日志等级 0-error，1-info，2-debug
-@property (nonatomic) NSUInteger logLevel;
+/// 日志等级 0-error，1-info，2-debug
+@property (nonatomic) NSInteger logLevel;
 
 /// 是否开启硬件加速编码
 @property (nonatomic) Boolean HWAccelEnable;
@@ -64,67 +77,34 @@ NMC_EXPORT
 /// 是否开启背景音降噪
 @property (nonatomic) Boolean denoiseEnable;
 
-///音视频内容加密密码，16字节字符串
+/// 是否使用扩展FLV ID方式进行编码推流
+@property (nonatomic) Boolean extendedFlvId;
+
+/// 音视频内容加密密码，16字节字符串
 @property (nonatomic, copy) NSString *cryptoKey;
 
-/////预览前置摄像头画面是否镜像
-//@property(nonatomic) Boolean cameraFrontMirror;
-//
-/////编码前置摄像头画面是否镜像
-//@property(nonatomic) Boolean videoFrontMirror;
+/// 预览前置摄像头画面是否镜像
+@property (nonatomic) Boolean cameraFrontMirror;
 
-///视频关键帧间隔，单位秒
-@property (nonatomic) NSUInteger keyFrameInterval;
+/// 视频关键帧间隔，单位秒
+@property (nonatomic) NSInteger keyFrameInterval;
 
-///视频方向
-@property (nonatomic) NSUInteger videoOrientation;
+/// 视频方向
+@property (nonatomic) NSInteger videoOrientation;
 
-///设置麦克风音量，
-///0.0 麦克风静音
-///1.0 默认值
-///2.0 增益
-@property (nonatomic) float volume;
-
-@property (nonatomic) Boolean enhancedRtmp;
-
-///以注册码初始化推流器
-- (id)initWithLicense:(NSString *)license;
+- (instancetype)initWithLicense:(NSString *)license;
 
 ///打开摄像头，是否是前置打开
-- (int)openCamera:(Boolean)frontCamera;
+- (NSInteger)openCamera:(Boolean)frontCamera;
 
 ///打开指定类型摄像头，是否是前置打开
-- (int)openCameraDevice:(int)deviceType withFront:(Boolean)frontCamera;
+- (NSInteger)openCameraDevice:(NSInteger)deviceType withFront:(Boolean)frontCamera;
 
 ///关闭摄像头
-- (int)closeCamera;
+- (NSInteger)closeCamera;
 
 ///切换摄像头
-- (int)switchCamera;
-
-///设置音频编码参数
-- (void)setAudioParamWithCodec:(int)c profile:(int)p samplerate:(int)s channels:(int)ch bitrate:(int)b;
-
-///设置视频编码参数
-- (void)setVideoParamWithCodec:(int)c profile:(int)p width:(int)w height:(int)h fps:(int)f bitrate:(int)b;
-
-///开始推送视频流
-- (int)start:(NSString *)url;
-
-///停止推送视频流
-- (int)stop;
-
-///添加额外输出，可以是直播流地址，也可以是全路径的文件，支持flv,mp4,ts,mkv格式
-- (int)addOutput:(NSString *)url;
-
-///移除全部额外输出
-- (int)removeOutputs;
-
-///附加到视图
-- (void)attachView:(UIView *)view;
-
-///从视图移除
-- (void)detachView;
+- (NSInteger)switchCamera;
 
 /// 开启闪光灯补光
 - (void)enableTorch:(Boolean)enable;
@@ -136,7 +116,39 @@ NMC_EXPORT
 - (void)startFocusAndMeteringCenter;
 
 /// 设置自动对焦曝光白平衡
-- (void)startFocusAndMetering:(nullable CGPoint*)point withFlags:(int)flags;
+- (void)startFocusAndMetering:(nullable CGPoint*)point withFlags:(NSInteger)flags;
+
+///设置音频编码参数
+- (void)setAudioParamWithCodec:(NSInteger)c profile:(NSInteger)p samplerate:(NSInteger)s channels:(NSInteger)ch bitrate:(NSInteger)b;
+
+///设置视频编码参数
+- (void)setVideoParamWithCodec:(NSInteger)c profile:(NSInteger)p width:(NSInteger)w height:(NSInteger)h fps:(NSInteger)f bitrate:(NSInteger)b;
+
+/// 设置特效参数的强度
+- (void)setEffectParameter:(NSString *)parameter withIntensity:(float)intensity;
+
+/// 设置特性风格id
+- (void)setEffectStyleWithId:(NSInteger)sid;
+
+///开始推送视频流
+- (NSInteger)start:(NSString *)url;
+
+///停止推送视频流
+- (NSInteger)stop;
+
+///添加额外输出，可以是直播流地址，也可以是全路径的文件，支持flv,mp4,ts,mkv格式
+- (NSInteger)addOutput:(NSString *)url;
+
+///移除全部额外输出
+- (NSInteger)removeOutputs;
+
+///附加到视图
+- (void)attachView:(UIView *)view;
+
+///从视图移除
+- (void)detachView;
+
+
 
 @end
 

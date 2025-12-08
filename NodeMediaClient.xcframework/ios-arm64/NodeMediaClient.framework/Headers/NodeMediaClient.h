@@ -1,24 +1,18 @@
 //
 //  NodeMediaClient.h
-//  v3.2.7
+//  NodeMediaClient
 //
-//  Created by ALiang on 2021/11/29.
+//  Created by Mingliang Chen on 2025/11/16.
 //
 
 #import <Foundation/Foundation.h>
+
+// Import NodePlayer header using angle brackets for framework headers
+#import <NodeMediaClient/NodePlayer.h>
+#import <NodeMediaClient/NodePublisher.h>
 
 //! Project version number for NodeMediaClient.
 FOUNDATION_EXPORT double NodeMediaClientVersionNumber;
 
 //! Project version string for NodeMediaClient.
 FOUNDATION_EXPORT const unsigned char NodeMediaClientVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <NodeMediaClient/PublicHeader.h>
-
-
-#define NM_LOGLEVEL_ERROR 0
-#define NM_LOGLEVEL_INFO 1
-#define NM_LOGLEVEL_DEBUG 2
-
-#import <NodeMediaClient/NodePlayer.h>
-#import <NodeMediaClient/NodePublisher.h>
