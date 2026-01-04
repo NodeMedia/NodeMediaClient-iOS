@@ -77,6 +77,15 @@ NMC_EXPORT
 /// 是否开启背景音降噪
 @property (nonatomic) Boolean denoiseEnable;
 
+/// 是否开启补光灯
+@property (nonatomic) Boolean torchEnable;
+
+/// 缩放等级 0.0 - 1.0 对应缩放1x - 10x
+@property (nonatomic) float zoomRatio;
+
+/// 音量 0.0 - 1.0 用来控制推流是是否静音
+@property (nonatomic) float volume;
+
 /// 是否使用扩展FLV ID方式进行编码推流
 @property (nonatomic) Boolean extendedFlvId;
 
@@ -105,12 +114,6 @@ NMC_EXPORT
 
 ///切换摄像头
 - (NSInteger)switchCamera;
-
-/// 开启闪光灯补光
-- (void)enableTorch:(Boolean)enable;
-
-/// 设置缩放, 0.0-1.0
-- (void)setRoomRatio:(float)ratio;
 
 /// 设置中心点自动对焦曝光白平衡
 - (void)startFocusAndMeteringCenter;
