@@ -1,4 +1,4 @@
-# NodePlayer API 文档
+# iOS NodePlayer API 文档
 
 NodePlayer 是 NodeMediaClient 框架的核心播放器类，支持 RTMP、RTSP、HTTP 等多种协议的直播与点播播放。
 
