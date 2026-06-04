@@ -1,4 +1,4 @@
-# NodePublisher API 文档
+# iOS NodePublisher API 文档
 
 NodePublisher 是 NodeMediaClient 框架的核心推流器类，提供摄像头采集、音视频编码、直播推流及多路输出等功能。
 
